@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #get 'articulos/new'
+
+  #get 'articulos/index'
+
+  resource :articulos
+
   get 'estaticas/home'
 
   get 'estaticas/index'
