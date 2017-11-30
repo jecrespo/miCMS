@@ -1,11 +1,23 @@
 class ArticulosController < ApplicationController
-  def new
-  end
 
   def index
+    @articulos=Articulo.all.order("Create at DESC")
+  end
+
+  def show
+  end
+
+  def new
+    @articulo = Articulo.new
   end
 
   def create
+    @articulo = Articulo.new(articulo_params)
+    if @articulo.save
+      redirect_to @articulo
+    else
+      reder 'new'
+    end
   end
 
   def edit
@@ -14,9 +26,10 @@ class ArticulosController < ApplicationController
   def update
   end
 
-  def show
+  def destroy
   end
 
-  def utility
+  def articulos_params
+    params.require(:articulo).permit(:titulo, :conteido)
   end
 end
