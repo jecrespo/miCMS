@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @formulario.nombre %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @formulario.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @formulario.telefono %>
+</p>
+
+<%= link_to 'Edit', edit_formulario_path(@formulario) %> |
+<%= link_to 'Back', formularios_path %>
